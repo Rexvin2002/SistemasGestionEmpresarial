@@ -1,0 +1,159 @@
+// question: 1 name: Automatización de tareas repetitivas
+::Automatización de tareas repetitivas::¿Cuál de las siguientes herramientas permite automatizar tareas repetitivas en una empresa? {
+~CRM
+=RPA
+~ERP
+~SCM
+}
+
+// question: 2 name: Software para integrar procesos
+::Software para integrar procesos::¿Qué software es conocido por integrar todos los procesos de una empresa en una única plataforma? {
+~CRM
+~SCM
+=ERP
+~SRM
+}
+
+// question: 3 name: Problemas de usar diferentes programas
+::Problemas de usar diferentes programas::¿Cuál es uno de los principales problemas de usar diferentes programas en cada departamento de una empresa? {
+~Mejora la integración entre sistemas
+~Facilita la comunicación
+=Aumenta el riesgo de inconsistencias de datos
+~Reduce costos
+}
+
+// question: 4 name: Herramienta para gestionar relaciones con clientes
+::Herramienta para gestionar relaciones con clientes::¿Qué herramienta está diseñada específicamente para gestionar las relaciones con clientes y optimizar procesos de ventas? {
+=CRM
+~DSS
+~ERP
+~SRM
+}
+
+// question: 5 name: Beneficio de la automatización de procesos
+::Beneficio de la automatización de procesos::¿Cuál de las siguientes afirmaciones es un beneficio de la automatización de procesos en una empresa? {
+~Aumenta la necesidad de mano de obra
+=Reduce los errores y los costos operativos
+~Mejora la fidelización de clientes
+~Aumenta la cantidad de inventario necesario
+}
+
+// question: 6 name: Característica del ERP
+::Característica del ERP::¿Qué característica del ERP permite agregar nuevos módulos según sea necesario? {
+~Flexibilidad
+~Integración
+=Modularidad
+~Estandarización
+}
+
+// question: 7 name: Propósito de un DSS
+::Propósito de un DSS::¿Cuál es el propósito principal de un DSS (Sistema de Apoyo a la Toma de Decisiones)? {
+~Optimizar la relación con proveedores
+=Ayudar a gerentes a tomar decisiones informadas
+~Gestionar las finanzas de una empresa
+~Facilitar la comunicación entre departamentos
+}
+
+// question: 8 name: Empresa conocida por software ERP
+::Empresa conocida por software ERP::¿Qué empresa es una de las más conocidas por ofrecer software ERP? {
+~Google
+=SAP
+~Microsoft
+~Amazon
+}
+
+// question: 9 name: Expectativas en implementación de ERP
+::Expectativas en implementación de ERP::¿Qué problema puede surgir al tener expectativas poco realistas durante la implementación de un ERP? {
+~Mejora en la gestión de inventarios
+=Retrasos en el proyecto
+~Mejor análisis de datos
+~Aumento de la seguridad de los sistemas
+}
+
+// question: 10 name: Función del módulo de contabilidad en ERP
+::Función del módulo de contabilidad en ERP::¿Qué función tiene el módulo de contabilidad en un ERP? {
+~Gestionar la logística y distribución
+~Controlar las ventas y el marketing
+=Administrar las transacciones financieras
+~Planificar la producción
+}
+
+// question: 11 name: Análisis en un DSS
+::Análisis en un DSS::¿Qué tipo de análisis permite un DSS a los gerentes? {
+~Solo análisis cualitativos
+=Análisis de datos y simulaciones para la toma de decisiones
+~Análisis de costos fijos
+~Análisis de la competencia
+}
+
+// question: 12 name: Integración en ERP
+::Integración en ERP::¿Qué implica la integración en un ERP? {
+~Uso de múltiples sistemas independientes
+=Compartir información entre diferentes módulos en tiempo real
+~Aumento de costos operativos
+~Disminución en la calidad de los datos
+}
+
+// question: 13 name: Ventaja del ERP
+::Ventaja del ERP::Una ventaja de un ERP en una empresa es: {
+~Aumento en el tiempo de respuesta
+~Duplicación de procesos
+=Mejora en la toma de decisiones
+~Mayor complejidad operativa
+}
+
+// question: 14 name: Significado de back-office
+::Significado de back-office::¿Qué significa "back-office" en un contexto empresarial? {
+~Actividades que involucran la interacción con el cliente
+=Operaciones internas que no son visibles para el cliente
+~Estrategias de marketing y ventas
+~Gestión de recursos humanos
+}
+
+// question: 15 name: Definición de CRM
+::Definición de CRM::¿Qué es un CRM? {
+~Una herramienta para gestionar la relación con proveedores
+~Un sistema para automatizar la toma de decisiones
+=Un software para gestionar la relación con los clientes
+~Un sistema de almacenamiento de datos
+}
+
+// question: 16 name: Ejemplo de SaaS
+::Ejemplo de SaaS::¿Qué plataforma es un ejemplo de SaaS (Software como Servicio)? {
+~Un servidor físico
+=Un ERP instalado en la nube
+~Un software de contabilidad personalizado
+~Un servidor virtual en Azure
+}
+
+// question: 17 name: Flujo de trabajo (workflow)
+::Flujo de trabajo (workflow)::El flujo de trabajo (workflow) se refiere a: {
+~La forma en que se gestionan los datos
+=La secuencia de actividades en un proceso de negocio
+~La relación entre diferentes módulos de un ERP
+~La automatización de procesos manuales
+}
+
+// question: 18 name: Problema al no utilizar ERP
+::Problema al no utilizar ERP::Un ejemplo de un problema que puede surgir al no utilizar un ERP es: {
+~Mayor agilidad en los procesos
+=Dificultades en la colaboración entre departamentos
+~Mejor gestión de la información
+~Mayor eficiencia en la producción
+}
+
+// question: 19 name: Aspecto que no forma parte de SIGE
+::Aspecto que no forma parte de SIGE::¿Qué aspecto NO forma parte de los Sistemas de Información para la Gestión Empresarial (SIGE)? {
+~Tecnología
+~Procesos
+=Redes sociales
+~Datos
+}
+
+// question: 20 name: Modularidad en ERP
+::Modularidad en ERP::¿Qué es la modularidad en un sistema ERP? {
+~El uso de un solo módulo para todas las funciones
+~La capacidad de adaptarse a diferentes plataformas
+=La posibilidad de agregar y personalizar módulos según las necesidades
+~La implementación en un único dispositivo
+}

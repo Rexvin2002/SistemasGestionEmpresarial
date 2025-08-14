@@ -1,0 +1,293 @@
+Desplazamiento de ficha
+
+Dos direcciones:
+
+si ficha a mover es (1, 1)
+se puede desplazar hacia derecha (5, 1) o abajo (1, 5)
+según la opción (x + 4, 1) o (1, y + 4)
+Si se desplaza a la derecha, el orden de columna de la primera fila cambia tal que así:
+(2, 1) pasa a la posición (1, 1),
+(3, 1) pasa a la posición (2, 1),
+(4, 1) pasa a la posición (3, 1),
+(5, 1) pasa a la posición (4, 1) y
+(1, 1) que es la ficha elegida pasa a la posición (5, 1).
+Si se desplaza hacia abajo, el orden de filas de la primera columna cambia tal que así:
+(1, 2) pasa a la posición (1, 1),
+(1, 3) pasa a la posición (1, 2),
+(1, 4) pasa a la posición (1, 3),
+(1, 5) pasa a la posición (1, 4) y
+(1, 1) que es la ficha elegida pasa a la posición (1, 5).
+
+si ficha a mover es (5, 5)
+se puede desplazar hacia izquierda (1, 5) o arriba (5, 1)
+según la opción (x - 4, 5) o (5, y - 4)
+Si se desplaza a la izquierda, el orden de columna de la última fila cambia tal que así:
+(4, 5) pasa a la posición (5, 5),
+(3, 5) pasa a la posición (4, 5),
+(2, 5) pasa a la posición (3, 5),
+(1, 5) pasa a la posición (2, 5) y
+(5, 5) que es la ficha elegida pasa a la posición (1, 5).
+Si se desplaza hacia arriba, el orden de filas de la última columna cambia tal que así:
+(5, 4) pasa a la posición (5, 5),
+(5, 3) pasa a la posición (5, 4),
+(5, 2) pasa a la posición (5, 3),
+(5, 1) pasa a la posición (5, 2) y
+(5, 5) que es la ficha elegida pasa a la posición (5, 1).
+
+si ficha a mover es (1, 5)
+se puede desplazar hacia derecha (5, 5) o arriba (1, 1)
+según la opción (x + 4, 5) o (1, y - 4)
+Si se desplaza a la derecha, el orden de columna de la primera fila cambia tal que así:
+(2, 5) pasa a la posición (1, 5),
+(3, 5) pasa a la posición (2, 5),
+(4, 5) pasa a la posición (3, 5),
+(5, 5) pasa a la posición (4, 5) y
+(1, 5) que es la ficha elegida pasa a la posición (5, 5).
+Si se desplaza hacia arriba, el orden de filas de la primera columna cambia tal que así:
+(1, 4) pasa a la posición (1, 5),
+(1, 3) pasa a la posición (1, 4),
+(1, 2) pasa a la posición (1, 3),
+(1, 1) pasa a la posición (1, 2) y
+(1, 5) que es la ficha elegida pasa a la posición (1, 1).
+
+si ficha a mover es (5, 1)
+se puede desplazar hacia izquierda (1, 1) o abajo (5, 5)
+según la opción (x - 4, 1) o (5, y + 4)
+Si se desplaza a la izquierda, el orden de columna de la última fila cambia tal que así:
+(5, 1) que es la ficha elegida pasa a la posición (1, 1),
+(4, 1) pasa a la posición (5, 1),
+(3, 1) pasa a la posición (4, 1),
+(2, 1) pasa a la posición (3, 1) y
+(1, 1) pasa a la posición (2, 1).
+Si se desplaza hacia abajo, el orden de filas de la última columna cambia tal que así:
+(5, 1) que es la ficha elegida pasa a la posición (5, 5),
+(5, 2) pasa a la posición (5, 1),
+(5, 3) pasa a la posición (5, 2),
+(5, 4) pasa a la posición (5, 3) y
+(5, 5) pasa a la posición (5, 4).
+
+
+Tres direcciones:
+
+si ficha a mover es (1, 2)
+se puede desplazar hacia arriba (1, 1), abajo (1, 5) o derecha (5, 2)
+según la opción (1, y - 1), (1, y + 3) o (x + 4, 2)
+Si se desplaza hacia arriba, el orden de filas de la primera columna cambia tal que así:
+(1, 1) pasa a la posición (1, 2) y
+(1, 2) que es la ficha elegida pasa a la posición (1, 1),
+Si se desplaza hacia abajo, el orden de filas de la primera columna cambia tal que así:
+(1, 5) pasa a la posición (1, 4),
+(1, 4) pasa a la posición (1, 3),
+(1, 3) pasa a la posición (1, 2) y
+(1, 2) que es la ficha elegida pasa a la posición (1, 5).
+Si se desplaza a la derecha, el orden de columna de la primera fila cambia tal que así:
+(2, 2) pasa a la posición (1, 2),
+(3, 2) pasa a la posición (2, 2),
+(4, 2) pasa a la posición (3, 2),
+(5, 2) pasa a la posición (4, 2) y
+(1, 2) que es la ficha elegida pasa a la posición (5, 2).
+
+si ficha a mover es (1, 3)
+se puede desplazar hacia arriba (1, 1), abajo (1, 5) o derecha (5, 3)
+según la opción (1, y - 2), (1, y + 1) o (x + 4, 3)
+Si se desplaza hacia arriba, el orden de filas de la primera columna cambia tal que así:
+(1, 1) pasa a la posición (1, 2),
+(1, 2) pasa a la posición (1, 3) y
+(1, 3) que es la ficha elegida pasa a la posición (1, 1).
+Si se desplaza hacia abajo, el orden de filas de la primera columna cambia tal que así:
+(1, 5) pasa a la posición (1, 4),
+(1, 4) pasa a la posición (1, 3) y
+(1, 3) que es la ficha elegida pasa a la posición (1, 5).
+Si se desplaza a la derecha, el orden de columna de la primera fila cambia tal que así:
+(2, 3) pasa a la posición (1, 3),
+(3, 3) pasa a la posición (2, 3),
+(4, 3) pasa a la posición (3, 3),
+(5, 3) pasa a la posición (4, 3),
+(1, 3) que es la ficha elegida pasa a la posición (5, 3),
+
+si ficha a mover es (1, 4)
+se puede desplazar hacia arriba (1, 1), abajo (1, 5) o derecha (5, 4)
+según la opción (1, y - 3), (1, y + 1) o (x + 4, 4)
+Si se desplaza hacia arriba, el orden de filas de la primera columna cambia tal que así:
+(1, 3) pasa a la posición (1, 4),
+(1, 2) pasa a la posición (1, 3), 
+(1, 1) pasa a la posición (1, 2) y
+(1, 4) que es la ficha elegida pasa a la posición (1, 1).
+Si se desplaza hacia abajo, el orden de filas de la primera columna cambia tal que así:
+(1, 5) pasa a la posición (1, 4) y
+(1, 4) que es la ficha elegida pasa a la posición (1, 5).
+Si se desplaza a la derecha, el orden de columna de la primera fila cambia tal que así:
+(2, 4) pasa a la posición (1, 4),
+(3, 4) pasa a la posición (2, 4),
+(4, 4) pasa a la posición (3, 4),
+(5, 4) pasa a la posición (4, 4) y
+(1, 4) que es la ficha elegida pasa a la posición (5, 4).
+
+si ficha a mover es (2, 1)
+se puede desplazar hacia izquierda (1, 1), derecha (5, 1) o abajo (2, 5).
+según la opción (x - 1, 1), (x + 3, 1) o (2, y + 4)
+Si se desplaza a la izquierda, el orden de filas de la segunda columna cambia tal que así:
+(1, 1) pasa a la posición (1, 2) y
+(2, 1) que es la ficha elegida pasa a la posición (1, 1),
+Si se desplaza a la derecha, el orden de columna de la segunda fila cambia tal que así:
+(3, 1) pasa a la posición (2, 1),
+(4, 1) pasa a la posición (3, 1),
+(5, 1) pasa a la posición (4, 1) y
+(2, 1) que es la ficha elegida pasa a la posición (5, 1).
+Si se desplaza hacia abajo, el orden de filas de la segunda columna cambia tal que así:
+(2, 2) pasa a la posición (2, 1),
+(2, 3) pasa a la posición (2, 2),
+(2, 4) pasa a la posición (2, 3),
+(2, 5) pasa a la posición (2, 4) y
+(2, 1) que es la ficha elegida pasa a la posición (2, 5).
+
+si ficha a mover es (3, 1)
+se puede desplazar hacia izquierda (1, 1), derecha (5, 1) o abajo (3, 5)
+según la opción (x - 2, 1), (x + 2, 1) o (3, y + 4)
+Si se desplaza a la izquierda, el orden de filas de la tercera columna cambia tal que así:
+(2, 1) pasa a la posición (3, 1),
+(1, 1) pasa a la posición (2, 1) y
+(3, 1) que es la ficha elegida pasa a la posición (1, 1).
+Si se desplaza a la derecha, el orden de filas de la tercera columna cambia tal que así:
+(4, 1) pasa a la posición (3, 1),
+(5, 1) pasa a la posición (4, 1) y
+(3, 1) que es la ficha elegida pasa a la posición (5, 1).
+Si se desplaza hacia abajo, el orden de columna de la tercera fila cambia tal que así:
+(3, 1) que es la ficha elegida pasa a la posición (3, 5),
+(3, 2) pasa a la posición (3, 1),
+(3, 3) pasa a la posición (3, 2),
+(3, 4) pasa a la posición (3, 3) y
+(3, 1) que es la ficha elegida pasa a la posición (3, 5).
+
+si ficha a mover es (4, 1)
+se puede desplazar hacia la izquierda (1, 1), la derecha (5, 1) o abajo (4, 5)
+según la opción (x - 3, 1), (x + 1, 1) o (4, y + 4)
+Si se desplaza a la izquierda, el orden de filas de la cuarta columna cambia tal que así:
+(3, 1) pasa a la posición (4, 1),
+(2, 1) pasa a la posición (3, 1),
+(1, 1) pasa a la posición (2, 1) y
+(4, 1) que es la ficha elegida pasa a la posición (1, 1).
+Si se desplaza a la derecha, el orden de filas de la cuarta columna cambia tal que así:
+(5, 1) pasa a la posición (4, 1) y
+(4, 1) que es la ficha elegida pasa a la posición (5, 1).
+Si se desplaza hacia abajo, el orden de columna de la cuarta fila cambia tal que así:
+(4, 2) pasa a la posición (4, 1),
+(4, 3) pasa a la posición (4, 2),
+(4, 4) pasa a la posición (4, 3),
+(4, 1) pasa a la posición (4, 4) y
+(4, 1) que es la ficha elegida pasa a la posición (4, 5).
+
+si ficha a mover es (2, 5)
+se puede desplazar a la izquierda arriba (1, 5), la derecha (5, 5) o arriba (2, 1)
+según la opción (x - 1, 5), (x + 3, 5) o (2, y - 4)
+Si se desplaza a la izquierda, el orden de filas de la segunda columna cambia tal que así:
+(1, 5) pasa a la posición (2, 5) y
+(2, 5) que es la ficha elegida pasa a la posición (1, 5).
+Si se desplaza a la derecha, el orden de filas de la segunda columna cambia tal que así:
+(3, 5) pasa a la posición (2, 5),
+(4, 5) pasa a la posición (3, 5),
+(5, 5) pasa a la posición (4, 5) y
+(2, 5) que es la ficha elegida pasa a la posición (5, 5).
+Si se desplaza hacia arriba, el orden de columna de la segunda fila cambia tal que así:
+(2, 4) pasa a la posición (2, 5),
+(2, 3) pasa a la posición (2, 4),
+(2, 2) pasa a la posición (2, 3),
+(2, 1) pasa a la posición (2, 2) y
+(2, 5) que es la ficha elegida pasa a la posición (2, 1).
+
+si ficha a mover es (3, 5)
+se puede desplazar a la izquierda (1, 5), la derecha (5, 5) o arriba (3, 1)
+según la opción (x - 2, 5), (x + 2, 5) o (3, y - 4)
+Si se desplaza a la izquierda, el orden de filas de la tercera columna cambia tal que así:
+(2, 5) pasa a la posición (3, 5),
+(1, 5) pasa a la posición (2, 5) y
+(3, 5) que es la ficha elegida pasa a la posición (1, 5).
+Si se desplaza a la derecha, el orden de filas de la tercera columna cambia tal que así:
+(4, 5) pasa a la posición (3, 5),
+(5, 5) pasa a la posición (4, 5) y
+(3, 5) que es la ficha elegida pasa a la posición (5, 5).
+Si se desplaza hacia arriba, el orden de columna de la tercera fila cambia tal que así:
+(3, 4) pasa a la posición (3, 5),
+(3, 3) pasa a la posición (3, 4),
+(3, 2) pasa a la posición (3, 3),
+(3, 1) pasa a la posición (3, 2) y
+(3, 5) que es la ficha elegida pasa a la posición (3, 1).
+
+si ficha a mover es (4, 5)
+se puede desplazar a la izquierda (1, 5), la derecha (5, 5) o arriba (4, 1)
+según la opción (x - 3, 5), (x + 1, 5) o (3, y - 4)
+Si se desplaza a la izquierda, el orden de filas de la tercera columna cambia tal que así:
+(3, 5) pasa a la posición (4, 5),
+(2, 5) pasa a la posición (3, 5),
+(1, 5) pasa a la posición (2, 5) y
+(4, 5) que es la ficha elegida pasa a la posición (1, 5).
+Si se desplaza a la derecha, el orden de filas de la tercera columna cambia tal que así:
+(5, 5) pasa a la posición (4, 5) y
+(4, 5) que es la ficha elegida pasa a la posición (5, 5).
+Si se desplaza hacia arriba, el orden de columna de la tercera fila cambia tal que así:
+(4, 4) pasa a la posición (4, 5),
+(4, 3) pasa a la posición (4, 4),
+(4, 2) pasa a la posición (4, 3),
+(4, 1) pasa a la posición (4, 2) y
+(4, 5) que es la ficha elegida pasa a la posición (4, 1).
+
+si ficha a mover es (5, 2)
+se puede desplazar a la izquierda (1, 2), hacia arriba (5, 1) o abajo (5, 5)
+según la opción (x - 4, 5), (5, y - 1) o (5, y + 3)
+Si se desplaza a la izquierda, el orden de filas de la tercera columna cambia tal que así:
+(4, 2) pasa a la posición (5, 2),
+(3, 2) pasa a la posición (4, 2),
+(2, 2) pasa a la posición (3, 2),
+(1, 2) pasa a la posición (2, 2) y
+(5, 2) que es la ficha elegida pasa a la posición (1, 2).
+Si se desplaza hacia arriba, el orden de filas de la tercera columna cambia tal que así:
+(5, 1) pasa a la posición (5, 2) y
+(5, 2) que es la ficha elegida pasa a la posición (5, 1).
+Si se desplaza hacia abajo, el orden de filas de la tercera columna cambia tal que así:
+(5, 3) pasa a la posición (5, 2),
+(5, 4) pasa a la posición (5, 3),
+(5, 5) pasa a la posición (5, 4) y
+(5, 2) que es la ficha elegida pasa a la posición (5, 5).
+
+si ficha a mover es (5, 3)
+se puede desplazar a la izquierda (1, 3), hacia arriba (5, 1) o abajo (5, 5)
+según la opción (x - 4, 3), (5, y - 2) o (5, y + 2)
+Si se desplaza a la izquierda, el orden de filas de la tercera columna cambia tal que así:
+(4, 3) pasa a la posición (5, 3),
+(3, 3) pasa a la posición (4, 3),
+(2, 3) pasa a la posición (3, 3),
+(1, 3) pasa a la posición (2, 3) y
+(5, 3) que es la ficha elegida pasa a la posición (1, 3).
+Si se desplaza hacia arriba, el orden de filas de la tercera columna cambia tal que así:
+(5, 2) pasa a la posición (5, 3),
+(5, 1) pasa a la posición (5, 2) y
+(5, 3) que es la ficha elegida pasa a la posición (5, 1).
+Si se desplaza hacia abajo, el orden de filas de la tercera columna cambia tal que así:
+(5, 4) pasa a la posición (5, 3),
+(5, 5) pasa a la posición (5, 4) y
+(5, 3) que es la ficha elegida pasa a la posición (5, 5).
+
+si ficha a mover es (5, 4)
+se puede desplazar a la izquierda (1, 4), hacia arriba (5, 1) o abajo (5, 5)
+según la opción (x - 4, 4), (5, y - 3) o (5, y + 1)
+Si se desplaza a la izquierda, el orden de filas de la tercera columna cambia tal que así:
+(4, 4) pasa a la posición (5, 4),
+(3, 4) pasa a la posición (4, 4),
+(2, 4) pasa a la posición (3, 4),
+(1, 4) pasa a la posición (2, 4) y
+(5, 4) que es la ficha elegida pasa a la posición (1, 4).
+Si se desplaza hacia arriba, el orden de filas de la tercera columna cambia tal que así:
+(5, 3) pasa a la posición (5, 4),
+(5, 2) pasa a la posición (5, 3),
+(5, 1) pasa a la posición (5, 2) y
+(5, 4) que es la ficha elegida pasa a la posición (5, 1).
+
+Si se desplaza hacia abajo, el orden de filas de la tercera columna cambia tal que así:
+(5, 5) pasa a la posición (5, 4) y
+(5, 4) que es la ficha elegida pasa a la posición (5, 5).
+
+
+
+
+
+
