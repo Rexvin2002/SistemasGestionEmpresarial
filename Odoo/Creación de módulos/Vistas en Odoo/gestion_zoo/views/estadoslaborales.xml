@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <!-- Acción para Estados Laborales -->
+        <record id="action_estado_laboral" model="ir.actions.act_window">
+            <field name="name">Estados Laborales</field>
+            <field name="res_model">gestion_zoo.estado_laboral</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Vista Tree -->
+        <record id="view_tree_estado_laboral" model="ir.ui.view">
+            <field name="name">gestion_zoo.estado_laboral.tree</field>
+            <field name="model">gestion_zoo.estado_laboral</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Estado Laboral" />
+                    <field name="order" string="Orden" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista Form -->
+        <record id="view_form_estado_laboral" model="ir.ui.view">
+            <field name="name">gestion_zoo.estado_laboral.form</field>
+            <field name="model">gestion_zoo.estado_laboral</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" string="Estado Laboral" required="1"/>
+                            <field name="order" string="Orden" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Menú para Estados Laborales -->
+        <menuitem name="Estados Laborales"
+                  id="gestion_zoo.estado_laboral_menu"
+                  parent="gestion_zoo.menu_root"
+                  action="action_estado_laboral"
+                  sequence="6" />
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+
+        <!-- TIPO COMIDA -->
+        <record id="action_gestion_zoo_tipocomida" model="ir.actions.act_window">
+            <field name="name">Tipos de Comida</field>
+            <field name="res_model">gestion_zoo.tipocomida</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_gestion_zoo_tipocomida"
+            name="Tipos de Comida"
+            parent="gestion_zoo.menu_root"
+            action="action_gestion_zoo_tipocomida"
+            sequence="8" />
+
+    </data>
+</odoo>

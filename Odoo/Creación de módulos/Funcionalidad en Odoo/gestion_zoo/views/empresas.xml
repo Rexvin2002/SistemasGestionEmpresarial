@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <!-- EMPRESA -->
+        <record model="ir.actions.act_window" id="gestion_zoo.action_window_empresa">
+            <field name="name">Empresas</field>
+            <field name="res_model">gestion_zoo.empresa</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_form_empresa" model="ir.ui.view">
+            <field name="name">gestion_zoo.empresa.form</field>
+            <field name="model">gestion_zoo.empresa</field>
+            <field name="arch" type="xml">
+                <form string="Información de empresa">
+                    <sheet>
+
+                        <group>
+                            <field name="name" string="Nombre:" />
+                            <field name="address" string="Dirección:" />
+                            <field name="continent_ids" widget="many2many_tags" string="Continentes:" />
+                            <field name="phone" string="Teléfono:" />
+                            <field name="email" string="Correo:" />
+                            <field name="website" string="Web:" />
+                            <field name="founded_date" string="Fecha de fundación:" />
+                            <field name="company_type" string="Empresa:" />
+                        </group>
+
+
+                        <group>
+                            <field name="number_of_employees" string="NºEmpleados:" />
+                            <button name="action_calcular_empleados"
+                                string="Calcular Total Empleados" type="object"
+                                class="btn-primary btnWidth" />
+                        </group>
+
+                        <notebook>
+                            <page string="Lista de locales">
+                                <!-- Lista de locales -->
+                                <field name="locales" widget="one2many_list" string="Locales:" />
+                            </page>
+                        </notebook>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_tree_empresa">
+            <field name="name">gestion_zoo.local.tree</field>
+            <field name="model">gestion_zoo.empresa</field>
+            <field name="arch" type="xml">
+                <tree string="Empresas">
+                    <field name="name" />
+                    <field name="address" />
+                    <field name="phone" />
+                    <field name="email" />
+                </tree>
+            </field>
+        </record>
+
+        <menuitem name="Empresas"
+            id="gestion_zoo.menu_empresa"
+            parent="gestion_zoo.menu_root"
+            action="gestion_zoo.action_window_empresa"
+            sequence="9" />
+
+    </data>
+</odoo>

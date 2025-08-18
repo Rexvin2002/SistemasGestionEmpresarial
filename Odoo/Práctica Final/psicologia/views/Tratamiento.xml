@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+
+        <!-- Acción para abrir la vista -->
+        <record model="ir.actions.act_window" id="tratamiento_action">
+            <field name="name">Tratamientos</field>
+            <field name="res_model">psicologia.tratamiento</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menú de Tratamientos -->
+        <menuitem name="Tratamientos"
+            id="psicologia_menu_tratamiento"
+            parent="psicologia_configuracion"
+            sequence="50" />
+
+        <!-- Menú de Tratamientos -->
+        <menuitem name="Tratamientos"
+            id="psicologia_tratamiento"
+            parent="psicologia_menu_root"
+            action="tratamiento_action"
+            sequence="60" />
+
+        <!-- Vista de lista -->
+        <record model="ir.ui.view" id="tratamiento_tree">
+            <field name="name">psicologia.tratamiento.tree</field>
+            <field name="model">psicologia.tratamiento</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id_tratamiento" />
+                    <field name="name" />
+                    <field name="descripcion" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulario -->
+        <record model="ir.ui.view" id="tratamiento_form">
+            <field name="name">psicologia.tratamiento.form</field>
+            <field name="model">psicologia.tratamiento</field>
+            <field name="arch" type="xml">
+                <form string="Tratamientos">
+                    <sheet>
+                        <group>
+                            <field name="id_tratamiento" />
+                            <field name="name" />
+                            <field name="descripcion" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

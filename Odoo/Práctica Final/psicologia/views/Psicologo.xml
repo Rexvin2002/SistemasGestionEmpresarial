@@ -1,0 +1,112 @@
+<odoo>
+  <data>
+
+    <!-- Acción para abrir la vista -->
+    <record model="ir.actions.act_window" id="psicologo_action">
+      <field name="name">Psicólogos</field>
+      <field name="res_model">psicologia.psicologo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú de Psicólogos -->
+    <menuitem name="Psicólogos"
+      id="psicologia_menu_psicologo"
+      parent="psicologia_configuracion"
+      sequence="10" />
+
+    <!-- Menú de Psicólogos -->
+    <menuitem name="Psicólogos"
+      id="psicologia_psicologo"
+      parent="psicologia_menu_root"
+      action="psicologo_action"
+      sequence="20" />
+
+
+    <!-- Vista de lista -->
+    <record model="ir.ui.view" id="psicologo_tree">
+      <field name="name">psicologia.psicologo.tree</field>
+      <field name="model">psicologia.psicologo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="numero_colegiado" />
+          <field name="dni" />
+          <field name="name" />
+          <field name="edad" />
+          <field name="telefono" />
+          <field name="correo" />
+          <field name="direccion" />
+          <field name="total_pacientes" />
+          <field name="total_terapias" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista de formulario -->
+    <record model="ir.ui.view" id="psicologo_form">
+      <field name="name">psicologia.psicologo.form</field>
+      <field name="model">psicologia.psicologo</field>
+      <field name="arch" type="xml">
+        <form string="Psicólogo">
+          <div>
+            <div style="display: flex; align-items: center; gap: 16px; margin: 15px;">
+              <field name="imagen" widget="image"
+                style="width: 120px; height: 120px; object-fit: cover; overflow: hidden;" />
+              <h1 style="margin: 0; flex-grow: 1; font-size: 40pt; font-weight: bold;">
+                <field name="name" />
+              </h1>
+            </div>
+          </div>
+          <sheet>
+            <group>
+              <field name="numero_colegiado" />
+            </group>
+            <group string="Datos Personales">
+              <field name="dni" />
+              <field name="fecha_nacimiento" />
+              <field name="edad" />
+              <field name="telefono" />
+              <field name="correo" />
+              <field name="direccion" />
+            </group>
+            <notebook>
+              <page string="Pacientes">
+                <group>
+                  <field name="total_pacientes" readonly="1" />
+                </group>
+                <field name="pacientes_ids">
+                  <tree>
+                    <field name="dni" />
+                    <field name="name" />
+                    <field name="edad" />
+                    <field name="telefono" />
+                    <field name="correo" />
+                    <field name="direccion" />
+                    <field name="psicologo_ids" widget="many2many_tags" />
+                    <field name="total_terapias" />
+                  </tree>
+                </field>
+              </page>
+              <page string="Terapias">
+                <group>
+                  <field name="total_terapias" readonly="1" />
+                </group>
+                <field name="terapias_ids">
+                  <tree>
+                    <field name="name" />
+                    <field name="estado" />
+                    <field name="paciente_id" widget="badge" />
+                    <field name="psicologo_ids" widget="many2many_tags" />
+                    <field name="fecha" />
+                    <field name="duracion" />
+                    <field name="total_sesiones" />
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

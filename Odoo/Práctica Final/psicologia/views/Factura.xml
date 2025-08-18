@@ -1,0 +1,77 @@
+<odoo>
+    <data>
+
+        <!-- Acción para abrir la vista -->
+        <record model="ir.actions.act_window" id="factura_action">
+            <field name="name">Facturas</field>
+            <field name="res_model">psicologia.factura</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menú de Facturas -->
+        <menuitem name="Facturas"
+            id="psicologia_menu_factura"
+            parent="psicologia_configuracion"
+            sequence="60" />
+
+        <!-- Menú de Facturas -->
+        <menuitem name="Facturas"
+            id="psicologia_factura"
+            parent="psicologia_menu_root"
+            action="factura_action" 
+            sequence="70" />
+
+        <!-- Vista de lista -->
+        <record model="ir.ui.view" id="factura_tree">
+            <field name="name">psicologia.factura.tree</field>
+            <field name="model">psicologia.factura</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="sesion_ids" widget="many2many_tags"/>
+                    <field name="paciente_id" widget="badge"/>
+                    <field name="fecha_emision" />
+                    <field name="total" />
+                    <field name="currency_id" />
+                    <field name="estado" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulario -->
+        <record model="ir.ui.view" id="factura_form">
+            <field name="name">psicologia.factura.form</field>
+            <field name="model">psicologia.factura</field>
+            <field name="arch" type="xml">
+                <form string="Facturas">
+                    <header>
+                        <field name="estado" widget="statusbar" readonly="1" />
+                        <button name="action_pendiente" string="Pendiente" type="object"
+                            class="btn-primary" />
+                        <button name="action_cancelada" string="Cancelada" type="object"
+                            class="btn-primary" />
+                        <button name="action_pagado" string="Pagado" type="object"
+                            class="btn-primary" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group string="Correspondencias">
+                            <field name="paciente_id" />
+                            <field name="sesion_ids" widget="many2many_tags"/>
+                        </group>
+                        <group string="Fecha y Duración">
+                            <field name="fecha_emision" />
+                        </group>
+                        <group string="Información Adicional">
+                            <field name="currency_id" />
+                            <field name="total" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

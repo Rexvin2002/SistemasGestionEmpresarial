@@ -1,0 +1,194 @@
+<odoo>
+    <data>
+
+        <!-- WIZARD CAMBIAR HABITACULO -->
+        <record id="action_cambiar_habitaculo_wizard" model="ir.actions.act_window">
+            <field name="name">Cambiar Habitáculo de Animales</field>
+            <field name="res_model">gestion_zoo.cambiar_habitaculo_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="view_cambiar_habitaculo_wizard" model="ir.ui.view">
+            <field name="name">gestion_zoo.cambiar_habitaculo_wizard.form</field>
+            <field name="model">gestion_zoo.cambiar_habitaculo_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Cambiar Habitáculo de Animales">
+                    <group>
+                        <field name="species_id" />
+                        <field name="habitat_origen_id" />
+                        <field name="habitat_destino_id" />
+                    </group>
+                    <footer>
+                        <button string="Aplicar" type="object" name="cambiar_habitaculo"
+                            class="btn-primary" />
+                        <button string="Cancelar" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- WIZARD ELIMINAR ALIMENTO -->
+        <record id="view_eliminar_alimento_wizard_form" model="ir.ui.view">
+            <field name="name">gestion_zoo.eliminar_alimento_wizard.form</field>
+            <field name="model">gestion_zoo.eliminar_alimento_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Eliminar Alimentos de Dieta">
+                    <group>
+                        <field name="food_ids" widget="many2many_tags" />
+                        <field name="species_ids" widget="many2many_tags" />
+                    </group>
+                    <footer>
+                        <button string="Eliminar" type="object" name="action_remove_food_from_diet"
+                            class="btn-primary" />
+                        <button string="Cancelar" type="object" class="btn-secondary"
+                            special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_eliminar_alimento_wizard" model="ir.actions.act_window">
+            <field name="name">Eliminar Alimentos de Dieta</field>
+            <field name="res_model">gestion_zoo.eliminar_alimento_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- WIZARD AÑADIR CONTINENTE -->
+        <record id="view_add_continent_wizard_form" model="ir.ui.view">
+            <field name="name">gestion_zoo.add_continent_wizard.form</field>
+            <field name="model">gestion_zoo.add_continent_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Añadir Continentes a Especies">
+                    <group>
+                        <field name="continent_ids" widget="many2many_tags" />
+                        <field name="species_ids" widget="many2many_tags" />
+                    </group>
+                    <footer>
+                        <button string="Añadir" type="object" name="action_add_continent"
+                            class="btn-primary" />
+                        <button string="Cancelar" type="object" name="action_cancel"
+                            class="btn-secondary" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_add_continent_wizard" model="ir.actions.act_window">
+            <field name="name">Add Continent</field>
+            <field name="res_model">gestion_zoo.add_continent_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- WIZARD AÑADIR ALIMENTO -->
+        <record id="view_add_food_wizard_form" model="ir.ui.view">
+            <field name="name">gestion_zoo.add_food_wizard.form</field>
+            <field name="model">gestion_zoo.add_food_wizard</field> <!-- Usar el nombre correcto del
+            modelo -->
+            <field name="arch" type="xml">
+                <form string="Añadir Alimento a Dieta">
+                    <group>
+                        <field name="food_ids" widget="many2many_tags" />
+                        <field name="species_ids" widget="many2many_tags" />
+                        <field name="quantity" />
+                    </group>
+                    <footer>
+                        <button string="Añadir" type="object" name="action_add_food_to_diet"
+                            class="btn-primary" />
+                        <button string="Cancelar" type="object" class="btn-secondary"
+                            special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_add_food_wizard" model="ir.actions.act_window"> <!-- Corregir el nombre de
+            la acción -->
+            <field name="name">Añadir Alimentos a Dieta</field>
+            <field name="res_model">gestion_zoo.add_food_wizard</field> <!-- Usar el nombre correcto
+            del modelo -->
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- WIZARD ALTA -->
+        <record id="view_animal_group_wizard_form" model="ir.ui.view">
+            <field name="name">gestion_zoo.animal.group.wizard.form</field>
+            <field name="model">gestion_zoo.animal.group.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Crear Grupo de Animales">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="species_id" />
+                            <field name="habitat_id" />
+                            <field name="number_of_animals" />
+                            <field name="tipo_comida_id" />
+                            <field name="state" />
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Crear Animales" name="create_animal_group" type="object"
+                            class="btn-primary" />
+                        <button string="Cancelar" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_animal_group_wizard" model="ir.actions.act_window">
+            <field name="name">Crear Grupo de Animales</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gestion_zoo.animal.group.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- WIZARD ALIMENTAR -->
+        <record id="view_feed_animals_wizard_form" model="ir.ui.view">
+            <field name="name">gestion_zoo.feed.animals.wizard.form</field>
+            <field name="model">gestion_zoo.feed.animals.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Registrar Comida">
+                    <sheet>
+                        <group>
+                            <field name="date_start" />
+                            <field name="date_end" />
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Registrar Comida" name="action_register_food" type="object"
+                            class="btn-primary" />
+                        <button string="Cancelar" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_feed_animals_wizard" model="ir.actions.act_window">
+            <field name="name">Alimentar animales</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gestion_zoo.feed.animals.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <!-- MENUITEMS -->
+        <!-- WIZARD ELIMINAR ALIMENTO -->
+        <menuitem id="menu_eliminar_alimento_wizard"
+            name="Eliminar Alimentos de Dieta"
+            action="action_eliminar_alimento_wizard" />
+
+        <!-- WIZARD AÑADIR ALIMENTO -->
+        <menuitem id="menu_add_food_wizard"
+            name="Añadir Alimento a Dieta"
+            action="action_add_food_wizard" />
+
+
+    </data>
+</odoo>

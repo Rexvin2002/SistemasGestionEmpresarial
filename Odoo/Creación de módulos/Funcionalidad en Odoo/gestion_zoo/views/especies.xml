@@ -1,0 +1,105 @@
+<odoo>
+    <data>
+
+        <!-- ESPECIE -->
+        <record model="ir.actions.act_window" id="gestion_zoo.action_window_especie">
+            <field name="name">Especies</field>
+            <field name="res_model">gestion_zoo.especie</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_especie_search" model="ir.ui.view">
+            <field name="name">gestion.zoo.especie.search</field>
+            <field name="model">gestion_zoo.especie</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Nombre" filter_domain="[('name', 'ilike', self)]" />
+                    <field name="continent_ids" string="Continente" />
+                    <field name="popularity" string="Popularidad" />
+
+                    <filter string="Alta popularidad" name="high_popularity"
+                        domain="[('popularity', '>=', 70)]" />
+                    <filter string="Baja popularidad" name="low_popularity"
+                        domain="[('popularity', '&lt;', 30)]" />
+                    <filter string="Especies peligrosas" name="dangerous"
+                        domain="[('peligrosidad', 'in', ['3', '4'])]" />
+
+                    <group expand="0" string="Agrupar por">
+                        <filter string="Continente" name="group_continent"
+                            context="{'group_by': 'continent_ids'}" />
+                        <filter string="Nivel de peligrosidad" name="group_danger"
+                            context="{'group_by': 'peligrosidad'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_especie_form" model="ir.ui.view">
+            <field name="name">gestion.zoo.especie.form</field>
+            <field name="model">gestion_zoo.especie</field>
+            <field name="arch" type="xml">
+                <form string="Especie">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="image" widget="image" string="Imagen:"/>
+                                <field name="name" string="Nombre:"/>
+                                <field name="continent_ids" widget="many2many_tags" string="Continentes:" />
+                                <field name="total_continentes" readonly="1" string="Total Continentes"/>
+                                <field name="expected_lifespan" string="Esperanza de vida (años):"/>
+                                <field name="diet_type" string="Tipo de Dieta:" />
+                            </group>
+                            <group>
+                                <field name="conservation_status" string="Estado de conservación:" />
+                                <field name="peligrosidad" widget="priority" string="Peligrosidad:" />
+
+                                <div class="botones">
+                                    <button name="increase_popularity" type="object"
+                                        string="Aumentar popularidad" class="colorboton" />
+                                    <button name="decrease_popularity" type="object"
+                                        string="Reducir popularidad" class="colorboton" />
+                                    <field name="popularity" widget="percentpie"  nolabel="1"/>
+                                </div>
+                            </group>
+                        </group>
+                        <group string="Dieta Recomendada">
+                            <field name="diet_line_ids">
+                                <tree editable="bottom">
+                                    <field name="tipo_comida_id" />
+                                    <field name="cantidad" />
+                                </tree>
+                                <form>
+                                    <field name="tipo_comida_id" />
+                                    <field name="cantidad" />
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_especie_tree" model="ir.ui.view">
+            <field name="name">gestion.zoo.especie.tree</field>
+            <field name="model">gestion_zoo.especie</field>
+            <field name="arch" type="xml">
+                <tree decoration-danger="is_dangerous" decoration-muted="is_low_popularity"
+                    class="arbol">
+                    <field name="name" />
+                    <field name="continent_ids" widget="many2many_tags" />
+                    <field name="total_continentes" />
+                    <field name="popularity" />
+                    <field name="is_dangerous" invisible="1" nolabel="1" />
+                    <field name="is_low_popularity" invisible="1" nolabel="1" />
+                </tree>
+            </field>
+        </record>
+
+        <menuitem name="Especies"
+            id="gestion_zoo.menu_especie"
+            parent="gestion_zoo.menu_root"
+            action="gestion_zoo.action_window_especie"
+            sequence="2" />
+
+    </data>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="gestion_zoo.action_window_local">
+            <field name="name">Locales</field>
+            <field name="res_model">gestion_zoo.local</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_tree_local">
+            <field name="name">gestion_zoo.local.tree</field>
+            <field name="model">gestion_zoo.local</field>
+            <field name="arch" type="xml">
+                <tree string="Locales">
+                    <field name="name" />
+                    <field name="address" />
+                    <field name="phone" />
+                    <field name="email" />
+                    <field name="number_of_employees" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_form_local">
+            <field name="name">gestion_zoo.local.form</field>
+            <field name="model">gestion_zoo.local</field>
+            <field name="arch" type="xml">
+                <form string="Información de Local">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Nombre:" />
+                            <field name="address" string="Dirección:" />
+                            <field name="phone" string="Teléfono:" />
+                            <field name="email" string="Correo:" />
+                            <field name="number_of_employees" string="NºEmpleados:" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <menuitem name="Locales"
+            id="gestion_zoo.menu_local"
+            parent="gestion_zoo.menu_root"
+            action="gestion_zoo.action_window_local"
+            sequence="10" />
+
+    </data>
+</odoo>

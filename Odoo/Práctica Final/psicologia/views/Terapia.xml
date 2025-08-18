@@ -1,0 +1,97 @@
+<odoo>
+    <data>
+
+        <!-- Acción para abrir la vista -->
+        <record model="ir.actions.act_window" id="terapia_action">
+            <field name="name">Terapias</field>
+            <field name="res_model">psicologia.terapia</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menú de Terapias -->
+        <menuitem name="Terapias"
+            id="psicologia_menu_terapia"
+            parent="psicologia_configuracion"
+            sequence="30" />
+        
+        <!-- Menú de Terapias -->
+        <menuitem name="Terapias"
+            id="psicologia_terapia"
+            parent="psicologia_menu_root"
+            action="terapia_action"
+            sequence="40" />
+
+        <!-- Vista de lista -->
+        <record model="ir.ui.view" id="terapia_tree">
+            <field name="name">psicologia.terapia.tree</field>
+            <field name="model">psicologia.terapia</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="estado" />
+                    <field name="paciente_id" widget="badge" />
+                    <field name="psicologo_ids" widget="many2many_tags" />
+                    <field name="fecha" />
+                    <field name="duracion" />
+                    <field name="total_sesiones" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulario -->
+        <record model="ir.ui.view" id="terapia_form">
+            <field name="name">psicologia.terapia.form</field>
+            <field name="model">psicologia.terapia</field>
+            <field name="arch" type="xml">
+                <form string="Terapias">
+                    <header>
+                        <field name="estado" widget="statusbar" readonly="1" />
+
+                        <button name="action_pendiente" string="Pendiente" type="object"
+                            class="btn-primary" invisible="estado != 'completada'" />
+                        <button name="action_confirmada" string="Confirmada" type="object"
+                            class="btn-primary" invisible="estado != 'pendiente'" />
+                        <button name="action_cancelada" string="Cancelada" type="object"
+                            class="btn-primary" invisible="estado != 'confirmada'" />
+                        <button name="action_completada" string="Completada" type="object"
+                            class="btn-primary" invisible="estado != 'cancelada'" />
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group string="Correspondencias">
+                            <field name="paciente_id" />
+                            <field name="psicologo_ids" widget="many2many_tags" />
+                        </group>
+                        <group string="Fecha y Duración">
+                            <field name="fecha" />
+                            <field name="duracion" />
+                        </group>
+                        <notebook>
+                            <page string="Sesiones">
+
+                                <group>
+                                    <field name="total_sesiones" readonly="1" />
+                                </group>
+
+                                <field name="sesion_ids">
+                                    <tree>
+                                        <field name="name" />
+                                        <field name="terapia_id" widget="badge" />
+                                        <field name="factura_id" widget="badge" />
+                                        <field name="fecha_hora" />
+                                        <field name="duracion" />
+                                        <field name="total_tratamientos" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

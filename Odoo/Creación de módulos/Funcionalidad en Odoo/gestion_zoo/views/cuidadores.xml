@@ -1,0 +1,84 @@
+<odoo>
+    <data>
+
+        <!-- CUIDADOR -->
+        <record model="ir.actions.act_window" id="gestion_zoo.action_window_cuidador">
+            <field name="name">Ventana Cuidadores</field>
+            <field name="res_model">gestion_zoo.cuidador</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_tree_cuidador" model="ir.ui.view">
+            <field name="name">gestion_zoo.cuidador.tree</field>
+            <field name="model">gestion_zoo.cuidador</field>
+            <field name="arch" type="xml">
+                <tree string="Cuidadores">
+                    <field name="name" string="Nombre del Cuidador" widget="badge" />
+                    <field name="phone" string="Teléfono" widget="badge" />
+                    <field name="estudios" string="Estudios"
+                        decoration-primary="estudios in ['ciclo_grado_superior', 'universitario']"
+                        decoration-bf="estudios in ['ciclo_grado_superior', 'universitario']" />
+                    <field name="estado_laboral_id" string="Estado Laboral"/>
+                    <field name="total_habitaculos" string="Total Habitáculos" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_cuidador" model="ir.ui.view">
+            <field name="name">gestion_zoo.cuidador.form</field>
+            <field name="model">gestion_zoo.cuidador</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="estado_laboral_id" widget="statusbar" options="{'clickable': '1'}" />
+                        <button string="Cambiar Estado" type="object" name="cambiar_estado" class="btn-primary"/>
+                    </header>
+                    <sheet>
+                        <div>
+                            <h1>
+                                <field name="name" placeholder="Nombre del cuidador" />
+                            </h1>
+                        </div>
+                        <notebook>
+                            <!-- Páginas existentes -->
+                            <page string="Información básica">
+                                <group>
+                                    <field name="phone" placeholder="Introduzca el número aquí" />
+                                    <field name="estudios" widget="radio" />
+                                    <field name="hide_titulo" invisible="1" />
+                                    <field name="titulo"
+                                        placeholder="Introduzca el título"
+                                        force_save="1"
+                                        invisible="hide_titulo" />
+                                    <field name="salario" />
+                                </group>
+                            </page>
+
+                            <page string="Animales bajo cuidado">
+                                <group>
+                                    <field name="animal_ids" widget="many2many_tags"
+                                        placeholder="Seleccione los animales bajo cuidado" />
+                                </group>
+                            </page>
+
+                            <!-- Nueva página para Habitáculos -->
+                            <page string="Habitáculos bajo cuidado">
+                                <group>
+                                    <field name="habitaculo_ids" widget="many2many_tags"
+                                        placeholder="Seleccione los habitáculos bajo cuidado" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <menuitem name="Cuidadores"
+            id="gestion_zoo.menu_cuidador"
+            parent="gestion_zoo.menu_root"
+            action="gestion_zoo.action_window_cuidador"
+            sequence="4" />
+
+    </data>
+</odoo>

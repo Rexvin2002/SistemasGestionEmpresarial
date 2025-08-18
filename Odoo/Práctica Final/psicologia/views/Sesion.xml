@@ -1,0 +1,83 @@
+<odoo>
+    <data>
+
+        <!-- Acción para abrir la vista -->
+        <record model="ir.actions.act_window" id="sesion_action">
+            <field name="name">Sesiones</field>
+            <field name="res_model">psicologia.sesion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menú de Sesiones -->
+        <menuitem name="Sesiones"
+            id="psicologia_menu_sesion"
+            parent="psicologia_configuracion"
+            sequence="40" />
+
+        <!-- Menú de Sesiones -->
+        <menuitem name="Sesiones"
+            id="psicologia_sesion"
+            parent="psicologia_menu_root"
+            action="sesion_action"
+            sequence="50" />
+
+        <!-- Vista de lista -->
+        <record model="ir.ui.view" id="sesion_tree">
+            <field name="name">psicologia.sesion.tree</field>
+            <field name="model">psicologia.sesion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="terapia_id" widget="badge" />
+                    <field name="factura_id" widget="badge" />
+                    <field name="fecha_hora" />
+                    <field name="duracion" />
+                    <field name="total_tratamientos" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulario -->
+        <record model="ir.ui.view" id="sesion_form">
+            <field name="name">psicologia.sesion.form</field>
+            <field name="model">psicologia.sesion</field>
+            <field name="arch" type="xml">
+                <form string="Sesiones">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group string="Correspondencias">
+                            <field name="terapia_id" />
+                            <field name="factura_id" />
+                        </group>
+                        <group string="Fecha y Duración">
+                            <field name="fecha_hora" />
+                            <field name="duracion" />
+                        </group>
+                        <group string="Información Adicional">
+
+                            <field name="diagnostico" />
+                            <field name="notas" />
+                        </group>
+                        <notebook>
+                            <page string="Tratamientos">
+                                <group>
+                                    <field name="total_tratamientos" readonly="1" />
+                                </group>
+                                <field name="tratamiento_ids">
+                                    <tree>
+                                        <field name="id_tratamiento" />
+                                        <field name="name" />
+                                        <field name="descripcion" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

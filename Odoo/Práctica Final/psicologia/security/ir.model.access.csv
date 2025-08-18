@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_psicologia_psicologo,psicologia.psicologo,model_psicologia_psicologo,base.group_user,1,1,1,1
+access_psicologia_paciente,psicologia.paciente,model_psicologia_paciente,base.group_user,1,1,1,1
+access_psicologia_sesion,psicologia.sesion,model_psicologia_sesion,base.group_user,1,1,1,1
+access_psicologia_terapia,psicologia.terapia,model_psicologia_terapia,base.group_user,1,1,1,1
+access_psicologia_tratamiento,psicologia.tratamiento,model_psicologia_tratamiento,base.group_user,1,1,1,1
+access_psicologia_factura,psicologia.factura,model_psicologia_factura,base.group_user,1,1,1,1
+
+
+access_psicologia_asignar_pacientes_wizard,psicologia.asignar.pacientes.wizard,model_psicologia_asignar_pacientes_wizard,base.group_user,1,1,1,1
+access_psicologia_crear_terapia_wizard,psicologia.crear.terapia.wizard,model_psicologia_crear_terapia_wizard,base.group_user,1,1,1,1
+

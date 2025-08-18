@@ -1,0 +1,147 @@
+<odoo>
+    <data>
+
+        <!-- HABITÁCULO -->
+        <record model="ir.actions.act_window" id="gestion_zoo.action_window_habitaculo">
+            <field name="name">Ventana Habitáculos</field>
+            <field name="res_model">gestion_zoo.habitaculo</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_habitaculo_form" model="ir.ui.view">
+            <field name="name">gestion_zoo.habitaculo.form</field>
+            <field name="model">gestion_zoo.habitaculo</field>
+            <field name="arch" type="xml">
+                <form string="Habitáculo">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" string="Nombre del Habitáculo" />
+                                <field name="zone" string="Zona" />
+                                <field name="surface" string="Superficie (m²)" />
+                                <field name="habitat_type" string="Tipo de Hábitat" />
+                                <field name="maintenance_cost" />
+                            </group>
+                            <group>
+                                <field name="cleaning_date" string="Última Limpieza" />
+                                <field name="next_cleaning_date" string="Próxima Limpieza" />
+                                <field name="cleaning_urgency" widget="progressbar"
+                                    options="{'max_value': 100}"
+                                    string="Urgencia de Limpieza" />
+                                <button name="action_confirm_cleaning"
+                                    type="object"
+                                    icon="fa-check-circle"
+                                    confirm="¿Está seguro de que desea actualizar la fecha de limpieza?"
+                                    title="Marcar como limpio"
+                                    class="colorboton"
+                                />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="caretaker_id" string="Cuidador Responsable" />
+                            <!-- Campo añadido para el máximo número de animales -->
+                            <field name="max_animals" string="Máximo de Animales" />
+                        </group>
+                        <group string="Acciones disponibles">
+                            <button name="%(action_cambiar_habitaculo_wizard)s"
+                                type="action" string="Cambiar Habitáculo"
+                                class="btn-primary" />
+                            <button name="open_eliminar_alimento_wizard" type="object"
+                                string="Eliminar alimento de dieta de especies"
+                                class="btn-primary" />
+                            <button string="Add Continent to Species"
+                                type="object"
+                                name="open_add_continent_wizard"
+                                class="btn-primary" />
+                            <button name="open_add_food_wizard"
+                                string="Añadir Alimento a Dieta"
+                                type="object" class="btn-primary" />
+                            <button name="%(action_animal_group_wizard)d"
+                                string="Crear Grupo de Animales"
+                                type="action"
+                                class="btn-primary" />
+                            <button name="%(action_feed_animals_wizard)d"
+                                string="Alimentar animales"
+                                type="action"
+                                class="btn-primary" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_habitaculo_tree" model="ir.ui.view">
+            <field name="name">gestion_zoo.habitaculo.tree</field>
+            <field name="model">gestion_zoo.habitaculo</field>
+            <field name="arch" type="xml">
+                <tree decoration-warning="is_cleaning_due">
+                    <field name="name" />
+                    <field name="zone" />
+                    <field name="surface" />
+                    <field name="total_animals" string="Total de Animales" />
+                    <field name="cleaning_urgency" widget="progressbar" options="{'max_value': 100}" />
+                    <!-- Campo invisible requerido para decoration-warning -->
+                    <field name="is_cleaning_due" invisible="1" nolabel="1" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_habitaculo_search" model="ir.ui.view">
+            <field name="name">gestion_zoo.habitaculo.search</field>
+            <field name="model">gestion_zoo.habitaculo</field>
+            <field name="arch" type="xml">
+                <search>
+                    <!-- Campos de búsqueda -->
+                    <field name="name" string="Nombre" />
+                    <field name="surface" string="Área menor que"
+                        filter_domain="[('surface', '&lt;=', self)]" />
+
+                    <!-- Agrupación -->
+                    <group expand="0" string="Agrupar por">
+                        <filter name="group_by_cleaning_date"
+                            string="Fecha de limpieza"
+                            context="{'group_by': 'cleaning_date'}" />
+                        <filter name="group_by_cleaning_date_month"
+                            string="Fecha de limpieza (mes)"
+                            context="{'group_by': 'cleaning_date:month'}" />
+                        <filter name="group_by_cleaning_date_week"
+                            string="Fecha de limpieza (semana)"
+                            context="{'group_by': 'cleaning_date:week'}" />
+                    </group>
+
+                    <!-- Filtros predefinidos -->
+                    <filter name="cleaning_overdue"
+                        string="Limpieza vencida"
+                        domain="[('next_cleaning_date', '&lt;', context_today())]" />
+                    <filter name="cleaning_this_week"
+                        string="Limpieza esta semana"
+                        domain="[('cleaning_date', '>=', (context_today() + relativedelta(weeks=-1)).strftime('%Y-%m-%d'))]" />
+
+                    <!-- Panel lateral -->
+                    <searchpanel>
+                        <!-- Sección de Cuidadores -->
+                        <field name="caretaker_id"
+                            string="Cuidadores"
+                            select="multi"
+                            icon="fa-user"
+                            enable_counters="1" />
+
+                        <!-- Sección de Tipos de Habitáculo -->
+                        <field name="habitat_type"
+                            string="Tipos de Habitáculo"
+                            select="multi"
+                            icon="fa-home"
+                            enable_counters="1" />
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Habitáculos"
+            id="gestion_zoo.menu_habitaculo"
+            parent="gestion_zoo.menu_root"
+            action="gestion_zoo.action_window_habitaculo"
+            sequence="5" />
+
+    </data>
+</odoo>

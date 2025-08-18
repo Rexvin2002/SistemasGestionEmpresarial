@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <!-- GESTION ZOO -->
+        <menuitem name="Gestión Zoo"
+            id="gestion_zoo.menu_root"
+            sequence="1" />
+        
+    </data>
+</odoo>

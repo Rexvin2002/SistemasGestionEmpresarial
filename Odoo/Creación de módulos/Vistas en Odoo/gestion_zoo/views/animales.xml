@@ -1,0 +1,123 @@
+<odoo>
+    <data>
+
+        <!-- ANIMAL -->
+        <record model="ir.actions.act_window" id="gestion_zoo.action_window_animal">
+            <field name="name">Ventana Animales</field>
+            <field name="res_model">gestion_zoo.animal</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_animal_form" model="ir.ui.view">
+            <field name="name">gestion_zoo.animal.form</field>
+            <field name="model">gestion_zoo.animal</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <div class="estados">
+                            <div>
+                                <field name="state" widget="statusbar"
+                                    options="{'clickable': false}" />
+                            </div>
+                            <div>
+                                <button name="set_sick" string="Marcar como enfermo" type="object"
+                                    invisible="state != 'normal'" groups="base.group_user"
+                                    class="btn-danger" />
+                                <button name="set_in_recovery" string="Poner en recuperación"
+                                    type="object" invisible="state != 'sick'"
+                                    groups="base.group_user"
+                                    class="btn-warning" />
+                                <button name="set_normal" string="Poner en estado normal"
+                                    type="object"
+                                    invisible="state != 'recovery'" groups="base.group_user"
+                                    class="btn-success" />
+                            </div>
+                        </div>
+                        <div class="image">
+                            <field name="species_image" widget="image"
+                                options="{'size': [200, 200]}" class="oe_avatar" />
+                            <h1 class="animal-name">
+                                <field name="name" placeholder="Nombre del animal" />
+                            </h1>
+                        </div>
+                    </header>
+
+                    <sheet>
+                        <notebook>
+                            <page string="Información General">
+                                <group>
+                                    <group>
+                                        <field name="species_id" />
+                                        <field name="habitat_id" />
+                                        <field name="arrival_date" />
+                                    </group>
+                                    <group>
+                                        <field name="birth_date" />
+                                        <field name="born_in_zoo" />
+                                    </group>
+                                    <group>
+                                        <button name="create_cria" string="Crear Cría"
+                                            type="object" class="oe_highlight"
+                                            confirm="¿Está seguro de que desea crear una cría de este animal?"
+                                        />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Cuidador a cargo">
+                                <h6>Nombre: <field name="caretaker_id" string="Nombre del cuidador:" widget="badge" /></h6>
+                                <h6>Teléfono: <field name="caretaker_phone" string="Teléfono del cuidador:" widget="badge" /></h6>
+                            </page>
+                            <page string="Historial Médico">
+                                <group>
+                                    <field name="medical_history" />
+                                </group>
+                                <separator string="Revisiones Médicas" />
+                                <field name="medical_checkups">
+                                    <tree>
+                                        <field name="date" />
+                                        <field name="veterinarian" />
+                                        <field name="diagnosis" />
+                                        <field name="next_checkup" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Historial de Comida">
+                                <group>
+                                    <field name="comida_registro_ids">
+                                        <tree>
+                                            <field name="fecha" />
+                                            <field name="tipo_comida_id" />
+                                            <field name="cantidad" />
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_animal_tree" model="ir.ui.view">
+            <field name="name">animal.tree</field>
+            <field name="model">gestion_zoo.animal</field>
+            <field name="arch" type="xml">
+                <tree string="Animales">
+                    <field name="name" string="Nombre" />
+                    <field name="species_id" string="Especie" />
+                    <field name="habitat_id" string="Hábitat" />
+                    <field name="arrival_date" string="Fecha de llegada" />
+                    <field name="birth_date" string="Fecha de nacimiento" />
+                    <field name="born_in_zoo" string="Nacido en el zoológico" />
+                </tree>
+            </field>
+        </record>
+
+        <menuitem name="Animales"
+            id="gestion_zoo.menu_animal"
+            parent="gestion_zoo.menu_root"
+            action="gestion_zoo.action_window_animal"
+            sequence="3" />
+
+    </data>
+</odoo>

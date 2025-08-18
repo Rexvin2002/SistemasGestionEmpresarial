@@ -1,0 +1,41 @@
+<odoo>
+    <!-- Secuencia para Facturas -->
+    <record id="seq_factura" model="ir.sequence">
+        <field name="name">Factura</field>
+        <field name="code">psicologia.factura</field>
+        <field name="prefix">FAC-</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!-- Secuencia para Sesiones -->
+    <record id="seq_sesion" model="ir.sequence">
+        <field name="name">Sesion</field>
+        <field name="code">psicologia.sesion</field>
+        <field name="prefix">SES-</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!-- Secuencia para Terapias -->
+    <record id="seq_terapia" model="ir.sequence">
+        <field name="name">Terapia</field>
+        <field name="code">psicologia.terapia</field>
+        <field name="prefix">TER-</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!-- Secuencia para Tratamientos -->
+    <record id="seq_tratamiento" model="ir.sequence">
+        <field name="name">Tratamiento</field>
+        <field name="code">psicologia.tratamiento</field>
+        <field name="prefix">TRA-</field>
+        <field name="padding">4</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+</odoo>

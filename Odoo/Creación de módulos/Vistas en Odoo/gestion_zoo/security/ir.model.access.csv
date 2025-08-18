@@ -1,0 +1,18 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gestion_zoo_cuidador,gestion_zoo.cuidador,model_gestion_zoo_cuidador,base.group_user,1,1,1,1
+access_gestion_zoo_animal,gestion_zoo.animal,model_gestion_zoo_animal,base.group_user,1,1,1,1
+access_gestion_zoo_continente,gestion_zoo.continente,model_gestion_zoo_continente,base.group_user,1,1,1,1
+access_gestion_zoo_especie,gestion_zoo.especie,model_gestion_zoo_especie,base.group_user,1,1,1,1
+access_gestion_zoo_habitaculo,gestion_zoo.habitaculo,model_gestion_zoo_habitaculo,base.group_user,1,1,1,1
+access_gestion_zoo_medical_checkup_user,access_gz_medical_checkup_user,model_gestion_zoo_medical_checkup,base.group_user,1,1,1,1
+access_gestion_zoo_tipocomida_user,access_gestion_zoo_tipocomida_user,model_gestion_zoo_tipocomida,base.group_user,1,1,1,1
+access_diet_line_user,diet.line.user,model_gestion_zoo_diet_line,base.group_user,1,1,1,1
+access_gestion_zoo_change_habitat,gestion_zoo.change_habitat,model_gestion_zoo_animal,base.group_user,1,1,1,1
+access_gestion_zoo_cambiar_habitaculo_wizard,gestion_zoo.cambiar_habitaculo_wizard,model_gestion_zoo_cambiar_habitaculo_wizard,base.group_user,1,1,1,1
+access_gestion_zoo_eliminar_alimento_wizard_user,Acceso Usuario Eliminar Alimento Wizard,model_gestion_zoo_eliminar_alimento_wizard,base.group_user,1,1,1,1
+access_gestion_zoo_eliminar_alimento_wizard_manager,Acceso Manager Eliminar Alimento Wizard,model_gestion_zoo_eliminar_alimento_wizard,base.group_system,1,1,1,1
+access_gestion_zoo_add_continent_wizard,gestion_zoo.add_continent_wizard,model_gestion_zoo_add_continent_wizard,base.group_user,1,1,1,1
+access_gestion_zoo_add_food_wizard,gestion_zoo.add_food_wizard,model_gestion_zoo_add_food_wizard,base.group_user,1,1,1,1
+access_gestion_zoo_animal_group_wizard,Acceso a Wizard de Grupo de Animales,model_gestion_zoo_animal_group_wizard,base.group_user,1,1,1,1
+access_gestion_zoo_comida_registro,gestion_zoo.comida_registro,model_gestion_zoo_comida_registro,base.group_user,1,1,1,1
+access_gestion_zoo_estado_laboral,gestion_zoo.estado_laboral,model_gestion_zoo_estado_laboral,base.group_user,1,1,1,1

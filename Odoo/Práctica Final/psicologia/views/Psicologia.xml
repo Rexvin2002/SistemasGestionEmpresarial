@@ -1,0 +1,11 @@
+<odoo>
+    <!-- Menú principal raíz -->
+    <menuitem name="Psicología" id="psicologia_menu_root" />
+
+    <!-- Menú de Configuración -->
+    <menuitem name="Configuración"
+        id="psicologia_configuracion"
+        parent="psicologia_menu_root"
+        sequence="10" />
+
+</odoo>

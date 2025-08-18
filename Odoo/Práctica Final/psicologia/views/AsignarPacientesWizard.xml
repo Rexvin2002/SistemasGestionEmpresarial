@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+
+        <!-- Acción para abrir la vista -->
+        <record model="ir.actions.act_window" id="asignar_pacientes_wizard_action">
+            <field name="name">Asignar Pacientes</field>
+            <field name="res_model">psicologia.asignar.pacientes.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Menú de Citas -->
+        <menuitem name="Asignar Pacientes"
+            id="psicologia_menu_asignar_pacientes_wizard"
+            parent="psicologia_menu_psicologo"
+            action="asignar_pacientes_wizard_action" 
+            sequence="10" />
+
+        <!-- Vista de formulario -->
+        <record model="ir.ui.view" id="cita_form">
+            <field name="name">psicologia.asignar.pacientes.wizard.form</field>
+            <field name="model">psicologia.asignar.pacientes.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Asignar Pacientes">
+                    <sheet>
+                        <group>
+                            <field name="psicologo_id" />
+                            <field name="paciente_ids"/>
+                        </group>
+                        <footer>
+                            <button name="action_asignar_pacientes" string="Asignar Pacientes" type="object"
+                                class="btn-primary" />
+                            <button string="Cancelar" class="btn-secondary" special="cancel" />
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <!-- CONTINENTE -->
+        <record model="ir.actions.act_window" id="gestion_zoo.action_window_continente">
+            <field name="name">Continentes</field>
+            <field name="res_model">gestion_zoo.continente</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_form_continente" model="ir.ui.view">
+            <field name="name">gestion_zoo.continente.form</field>
+            <field name="model">gestion_zoo.continente</field>
+            <field name="arch" type="xml">
+                <form string="Continente">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <button string="Mostrar especies"
+                                type="object"
+                                name="boton_especies_por_continente"
+                                class="oe_highlight" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <menuitem name="Continentes"
+            id="gestion_zoo.menu_continente"
+            parent="gestion_zoo.menu_root"
+            action="gestion_zoo.action_window_continente"
+            sequence="1" />
+        
+    </data>
+</odoo>

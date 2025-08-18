@@ -1,0 +1,69 @@
+/* GENERAL */
+.estados{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+/* ESPECIE */
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.colorboton{
+    background-color: #71639e;
+    color: white;
+}
+.colorboton:hover{
+    background-color: #9382ca;
+}
+
+.o_percentpie {
+    width: 200px !important; /* Ajusta el tamaño según necesites */
+    height: 200px !important;
+}
+
+
+/* ANIMAL */
+.btn-danger {
+    background-color: red;
+}
+
+.btn-warning {
+    background-color: orange;
+}
+
+.btn-success {
+    background-color: green;
+}
+
+.image {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.animal-name {
+    margin-left: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* CUIDADOR */
+
+
+/* HABITACULO */
+
+.limpio {
+
+}
+
+

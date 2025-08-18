@@ -1,0 +1,43 @@
+
+            <record id="job_status_24" model="gestion_zoo.job_status">
+                <field name="name">dfsdfsdf</field>
+                <field name="sequence">10</field>
+                <field name="state">practices</field>
+                <field name="salary_base">0.0</field>
+            </record>
+            
+            <record id="job_status_25" model="gestion_zoo.job_status">
+                <field name="name">fawsfsf</field>
+                <field name="sequence">10</field>
+                <field name="state">practices</field>
+                <field name="salary_base">0.0</field>
+            </record>
+            
+            <record id="job_status_26" model="gestion_zoo.job_status">
+                <field name="name">fawsfsf</field>
+                <field name="sequence">10</field>
+                <field name="state">practices</field>
+                <field name="salary_base">0.0</field>
+            </record>
+            
+            <record id="job_status_27" model="gestion_zoo.job_status">
+                <field name="name">csddsd</field>
+                <field name="sequence">10</field>
+                <field name="state">practices</field>
+                <field name="salary_base">0.0</field>
+            </record>
+            
+            <record id="job_status_28" model="gestion_zoo.job_status">
+                <field name="name">ssds</field>
+                <field name="sequence">10</field>
+                <field name="state">practices</field>
+                <field name="salary_base">0.0</field>
+            </record>
+            
+            <record id="job_status_29" model="gestion_zoo.job_status">
+                <field name="name">ssssdd</field>
+                <field name="sequence">10</field>
+                <field name="state">practices</field>
+                <field name="salary_base">0.0</field>
+            </record>
+            

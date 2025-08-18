@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+
+        <!-- Acción para abrir la vista -->
+        <record model="ir.actions.act_window" id="crear_terapia_wizard_action">
+            <field name="name">Crear Terapia</field>
+            <field name="res_model">psicologia.crear.terapia.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Menú de Citas -->
+        <menuitem name="Crear Terapia"
+            id="psicologia_menu_crear_terapia_wizard"
+            parent="psicologia_menu_terapia"
+            action="crear_terapia_wizard_action" 
+            sequence="10" />
+
+        <!-- Vista de formulario -->
+        <record model="ir.ui.view" id="cita_form">
+            <field name="name">psicologia.crear.terapia.wizard.form</field>
+            <field name="model">psicologia.crear.terapia.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Crear Terapia">
+                    <sheet>
+                        <group>
+                            <field name="paciente_id" />
+                            <field name="psicologo_ids"/>
+                        </group>
+                        <footer>
+                            <button name="action_crear_terapia" string="Crear Terapia" type="object"
+                                class="btn-primary" />
+                            <button string="Cancelar" class="btn-secondary" special="cancel" />
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
